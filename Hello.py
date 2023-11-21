@@ -20,7 +20,7 @@ LOGGER = get_logger(__name__)
 
 
 def run():
-    dir_list = os.listdir(os.curdir)
+    dir_list = os.listdir('.streamlit')
     st.write(dir_list)
     with open(".streamlit/dataset-credentials.p8", "rb") as key:
       p_key= serialization.load_pem_private_key(
