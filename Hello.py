@@ -20,6 +20,8 @@ LOGGER = get_logger(__name__)
 
 
 def run():
+    path = os.path.abspath('.streamlit')
+    print(path)
     dir_list = os.listdir('.streamlit')
     st.write(dir_list)
     with open(".streamlit/dataset-credentials.p8", "rb") as key:
