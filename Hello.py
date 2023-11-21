@@ -13,12 +13,15 @@
 # limitations under the License.
 
 import streamlit as st
+import os
 from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
 
 
 def run():
+    dir_list = os.listdir(os.curdir)
+    st.write(dir_list)
     with open(".streamlit/dataset-credentials.p8", "rb") as key:
       p_key= serialization.load_pem_private_key(
           key.read(),
