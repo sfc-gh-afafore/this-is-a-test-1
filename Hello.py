@@ -24,7 +24,7 @@ def run():
     st.write(path)
     dir_list = os.listdir('.streamlit')
     st.write(dir_list)
-    with open("/mount/src/this-is-a-test-1/.streamlit/dataset-credentials.p8", "rb") as key:
+    with open(".streamlit", "rb") as key:
       p_key= serialization.load_pem_private_key(
           key.read(),
           password=None,
