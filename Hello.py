@@ -20,6 +20,7 @@ LOGGER = get_logger(__name__)
 
 
 def run():
+    st.write('Hello')
     path = os.path.abspath('.streamlit')
     st.write(path)
     dir_list = os.listdir('.streamlit')
