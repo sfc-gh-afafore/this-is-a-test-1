@@ -21,25 +21,25 @@ LOGGER = get_logger(__name__)
 
 def run():
     st.write('Hello')
-    path = os.path.abspath('.streamlit')
-    st.write(path)
-    dir_list = os.listdir('.streamlit')
-    st.write(dir_list)
-    with open(".streamlit", "rb") as key:
-      p_key= serialization.load_pem_private_key(
-          key.read(),
-          password=None,
-          backend=default_backend()
-      )
+    # path = os.path.abspath('.streamlit')
+    # st.write(path)
+    # dir_list = os.listdir('.streamlit')
+    # st.write(dir_list)
+    # with open(".streamlit", "rb") as key:
+    #   p_key= serialization.load_pem_private_key(
+    #       key.read(),
+    #       password=None,
+    #       backend=default_backend()
+    #   )
 
-    pkb = p_key.private_bytes(
-        encoding=serialization.Encoding.DER,
-        format=serialization.PrivateFormat.PKCS8,
-        encryption_algorithm=serialization.NoEncryption())
+    # pkb = p_key.private_bytes(
+    #     encoding=serialization.Encoding.DER,
+    #     format=serialization.PrivateFormat.PKCS8,
+    #     encryption_algorithm=serialization.NoEncryption())
 
-    conn = st.experimental_connection("snowpark", private_key=pkb, role="readonly_role")
-    query = conn.query('select * from free_dataset_GZ1M6Z2R41Y.public.t_rbaseit limit 10;');
-    st.dataframe(query)
+    # conn = st.experimental_connection("snowpark", private_key=pkb, role="readonly_role")
+    # query = conn.query('select * from free_dataset_GZ1M6Z2R41Y.public.t_rbaseit limit 10;');
+    # st.dataframe(query)
 
 
 if __name__ == "__main__":
